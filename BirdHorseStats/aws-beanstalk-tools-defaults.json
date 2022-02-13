@@ -1,0 +1,20 @@
+
+{
+    "region" : "ap-southeast-2",
+    "configuration" : "Debug",
+    "framework"     : "netcoreapp3.1",
+    "self-contained" : false,
+    "application"    : "BirdHorseStats",
+    "environment"    : "BirdHorseStats-dev",
+    "enable-xray"    : false,
+    "enhanced-health-type" : "basic",
+    "additional-options"   : "\"aws:autoscaling:launchconfiguration,SecurityGroups\"=\"sg-c6140ca4\";\"aws:ec2:vpc,Subnets\"=\"subnet-f46f7796\"",
+    "solution-stack"       : "64bit Amazon Linux 2 v2.2.10 running .NET Core",
+    "environment-type"     : "SingleInstance",
+    "cname"                : "BirdHorseStats-dev",
+    "instance-type"        : "t3a.medium",
+    "key-pair"             : "espialLS3",
+    "instance-profile"     : "aws-elasticbeanstalk-ec2-role",
+    "service-role"         : "aws-elasticbeanstalk-service-role",
+    "proxy-server"         : "nginx"
+}
