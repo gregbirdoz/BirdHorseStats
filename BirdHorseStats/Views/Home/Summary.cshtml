@@ -1,0 +1,56 @@
+﻿@model BirdHorseStats.Models.SurvivalModel
+    @{
+    ViewData["Title"] = "Summary";
+    }
+    <div>
+        <h3>Supplied Horse Health Details:</h3>
+        <table class="table table-bordered table-striped table-sm">
+            <thead>
+                <tr><th>Health Stat</th><th>Value</th></tr>
+            </thead>
+            @*Clearly this should be populated by using an enumerator:
+            Doing so is something that once you see it once you know how to do...
+            In the absence of access to a codebase that uses best practice
+            or the time to dig through forums and online coding books -
+            it has, embarrassingly, been done like this instead*@
+            <tbody>
+                <tr><td>Surgery</td><td>@Model.Surgery</td></tr>
+                <tr><td>Age</td><td>@Model.Age</td></tr>
+                <tr><td>Rectal Temp</td><td>@Model.Rectal_temp</td></tr>
+                <tr><td>Pulse</td><td>@Model.Pulse</td></tr>
+                <tr><td>Respiratory rate</td><td>@Model.Respiratory_rate</td></tr>
+                <tr><td>Temp of extremities</td><td>@Model.Temp_of_extremities</td></tr>
+                <tr><td>Peripheral pulse</td><td>@Model.Peripheral_pulse</td></tr>
+                <tr><td>Mucous membrane</td><td>@Model.Mucous_membrane</td></tr>
+                <tr><td>Capillary refill time</td><td>@Model.Capillary_refill_time</td></tr>
+                <tr><td>Pain</td><td>@Model.Pain</td></tr>
+                <tr><td>Peristalsis</td><td>@Model.Peristalsis</td></tr>
+                <tr><td>Abdominal distention</td><td>@Model.Abdominal_distention</td></tr>
+                <tr><td>Nasogastric tube</td><td>@Model.Nasogastric_tube</td></tr>
+                <tr><td>Nasogastric reflux</td><td>@Model.Nasogastric_reflux</td></tr>
+                <tr><td>Nasogastric reflux_ph</td><td>@Model.Nasogastric_reflux_ph</td></tr>
+                <tr><td>Rectal exam feces</td><td>@Model.Rectal_exam_feces</td></tr>
+                <tr><td>Abdomen</td><td>@Model.Abdomen</td></tr>
+                <tr><td>Packed cell volume</td><td>@Model.Packed_cell_volume</td></tr>
+                <tr><td>Total protein</td><td>@Model.Total_protein</td></tr>
+                <tr><td>Abdomo appearance</td><td>@Model.Abdomo_appearance</td></tr>
+                <tr><td>Abdomo protein</td><td>@Model.Abdomo_protein</td></tr>
+                <tr><td>Surgical lesion</td><td>@Model.Surgical_lesion</td></tr>
+                <tr><td>Lesion 1</td><td>@Model.Lesion_1</td></tr>
+                <tr><td>Lesion 2</td><td>@Model.Lesion_2</td></tr>
+                <tr><td>Lesion 3</td><td>@Model.Lesion_3</td></tr>
+                <tr><td>Cp data</td><td>@Model.Cp_data</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <div>
+        <h3>Results of Survival Test:</h3>
+        <table class="table table-bordered table-striped table-sm">
+            <thead>
+                <tr><th>Outcome</th><th>Reason</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>@Model.GetOutcome()</td><td>@Model.GetReasons()</td></tr>
+            </tbody>
+        </table>
+    </div>

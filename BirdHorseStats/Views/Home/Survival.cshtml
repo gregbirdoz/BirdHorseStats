@@ -1,0 +1,273 @@
+﻿@model BirdHorseStats.Models.SurvivalModel
+@{
+    ViewData["Title"] = "Survival Test";
+}
+
+
+<form asp-action="Survival" method="post" class="m-2">
+        <h5 class="bg-primary text-white text-center m-2 p-2">Enter the Horse Health Details:</h5>
+    <div asp-validation-summary="All"></div>
+    <table class="table table-bordered table-striped table-sm ">
+        <tbody>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label>Surgery:</label>
+                        <select class="form-control" asp-for="Surgery">
+                            <option value="true">Yes</option>
+                            <option value="false" selected>No</option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label>Age:</label>
+                        <select class="form-control" asp-for="Age">
+                            <option value="young">Young</option>
+                            <option value="adult" selected>Adult</option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label asp-for="Rectal_temp">Rectal temp (decimal/NA):</label>
+                        <input class="form-control" asp-for="Rectal_temp" value="38.3" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label asp-for="Pulse">Pulse (integer/NA):</label>
+                        <input class="form-control" asp-for="Pulse" value="40" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label asp-for="Respiratory_rate">Respiratory rate (integer/NA):</label>
+                        <input class="form-control" asp-for="Respiratory_rate" value="24" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label>Temp of extremities:</label>
+                        <select class="form-control" asp-for="Temp_of_extremities">
+                            <option value="normal" selected>Normal</option>
+                            <option value="cold">Cold</option>
+                            <option value="warm">Warm</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label>Peripheral pulse:</label>
+                        <select class="form-control" asp-for="Peripheral_pulse">
+                            <option value="normal" selected>Normal</option>
+                            <option value="absent">Absent</option>
+                            <option value="reduced">Reduced</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label>Mucous membrane:</label>
+                        <select class="form-control" asp-for="Mucous_membrane">
+                            <option value="normal_pink">Normal pink</option>
+                            <option value="pale_pink" selected>Pale pink</option>
+                            <option value="bright_pink">Bright pink</option>
+                            <option value="pale_cyanotic">Pale cyanotic</option>
+                            <option value="dark_cyanotic">Dark cyanotic</option>
+                            <option value="bright_red">Bright Red</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label>Capillary Refill Time:</label>
+                        <select class="form-control" asp-for="Capillary_refill_time">
+                            <option value="less_3_sec" selected>3 seconds or less</option>
+                            <option value="more_3_sec">More than 3 seconds</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label>Pain:</label>
+                        <select class="form-control" asp-for="Pain">
+                            <option value="alert">Alert</option>
+                            <option value="depressed">Depressed</option>
+                            <option value="mild_pain" selected>Mild pain</option>
+                            <option value="extreme_pain">Extreme Pain</option>
+                            <option value="severe_pain">Severe Pain</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label>Peristalsis:</label>
+                        <select class="form-control" asp-for="Peristalsis">
+                            <option value="normal">Normal</option>
+                            <option value="absent">Absent</option>
+                            <option value="hypomotile" selected>Hypomotile</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label>Abdominal distention:</label>
+                        <select class="form-control" asp-for="Abdominal_distention">
+                            <option value="none" selected>None</option>
+                            <option value="slight">Slight</option>
+                            <option value="moderate">Moderate</option>
+                            <option value="severe">Severe</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label>Nasogastric tube:</label>
+                        <select class="form-control" asp-for="Nasogastric_tube">
+                            <option value="none">None</option>
+                            <option value="slight">Slight</option>
+                            <option value="significant">Significant</option>
+                            <option value="NA" selected>NA</option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label>Nasogastric reflux:</label>
+                        <select class="form-control" asp-for="Nasogastric_reflux">
+                            <option value="less_1_liter">3 seconds or less</option>
+                            <option value="more_1_liter">More than 3 seconds</option>
+                            <option value="NA" selected>NA</option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label asp-for="Nasogastric_reflux_ph">Nasogastric reflux PH (decimal/NA):</label>
+                        <input class="form-control" asp-for="Nasogastric_reflux_ph" value="NA" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label>Rectal exam feces:</label>
+                        <select class="form-control" asp-for="Rectal_exam_feces">
+                            <option value="normal" selected>Normal</option>
+                            <option value="absent">Absent</option>
+                            <option value="decreased">Decreased</option>
+                            <option value="increased">Increased</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label>Abdomen:</label>
+                        <select class="form-control" asp-for="Abdomen">
+                            <option value="normal" selected>Normal</option>
+                            <option value="firm">Firm</option>
+                            <option value="distend_small">Distended small</option>
+                            <option value="distend_large">Distended large</option>
+                            <option value="other">Other</option>
+                            <option value="NA">NA</option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label asp-for="Packed_cell_volume">Packed cell volume (integer/NA):</label>
+                        <input class="form-control" asp-for="Packed_cell_volume" value="33" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label asp-for="Total_protein">Total protein (decimal/NA):</label>
+                        <input class="form-control" asp-for="Total_protein" value="6.7" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label>Abdomo appearance:</label>
+                        <select class="form-control" asp-for="Abdomo_appearance">
+                            <option value="clear">Clear</option>
+                            <option value="cloudy">Cloudy</option>
+                            <option value="serosanguious">Serosanguious</option>
+                            <option value="NA" selected>NA</option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label asp-for="Abdomo_protein">Abdomo protein (decimal/NA):</label>
+                        <input class="form-control" asp-for="Abdomo_protein" value="NA" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label>Surgical lesion:</label>
+                        <select class="form-control" asp-for="Surgical_lesion">
+                            <option value="true">Yes</option>
+                            <option value="false" selected>No</option>
+                        </select>
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label asp-for="Lesion_1">Lesion 1 (0-32000):</label>
+                        <input class="form-control" asp-for="Lesion_1" value="0" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label asp-for="Lesion_2">Lesion 2 (0-8000):</label>
+                        <input class="form-control" asp-for="Lesion_2" value="0" />
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group">
+                        <label asp-for="Lesion_3">Lesion 3 (0-8000):</label>
+                        <input class="form-control" asp-for="Lesion_3" value="0" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        <label>CP data:</label>
+                        <select class="form-control" asp-for="Cp_data">
+                            <option value="true" selected>Yes</option>
+                            <option value="false">No</option>
+                        </select>
+                    </div>
+                </td>
+                <td class="text-center align-middle">
+                    <button type="submit" class="btn btn-primary">Submit Form</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+  
+    
+</form>

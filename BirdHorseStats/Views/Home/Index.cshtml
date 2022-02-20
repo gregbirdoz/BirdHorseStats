@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h3 class="display-4">Welcome to Bird Horse Stats</h3>
+    <h6>A selection of horse related statistics and machine learning algorthms created by Greg Bird</h6>
+    <div class="text-center p-2">
+        <p>Current list of Statistics and Machine Learning Algorithms:</p>
+        <table class="table table-bordered table-striped table-sm">
+            <thead>
+                <tr><th>Name</th><th>Details</th><th></th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Horse Survival Test</td>
+                    <td>Using Kaggle dataset <a href="https://www.kaggle.com/yasserh/horse-survival-dataset" target="_blank">Horse Survival Dataset</a> - train application to identify mortality outcome for new user input test data.</td>
+                    <td><a class="btn btn-primary" asp-action="Survival">Start</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
