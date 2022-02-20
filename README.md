@@ -19,3 +19,4 @@ TODO:
 
 KNOWN ISSUES:
 1. Problem with AWS root user preventing the use of SageMaker to train and test ML model. Alternative would be to use Sharpkit.learn .Net package - limited functionality.
+2. Other issues in comments
