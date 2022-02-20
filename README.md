@@ -10,11 +10,11 @@ Using Kaggle dataset - https://www.kaggle.com/yasserh/horse-survival-dataset - t
 
 Current Funtionality:
 1. Takes horse health details in a form
-2. Presents those details via the model
+2. Presents those details via the model (MVC)
 
 TODO:
-1. Train a model on the training data
-2. Use the submitted health data to test the model
+1. Train a machine learning model on the training dataset
+2. Use the submitted health data to test the model 
 3. Present the results of the test to the user
 
 KNOWN ISSUES:
