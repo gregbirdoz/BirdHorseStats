@@ -1,5 +1,5 @@
 # BirdHorseStats
-Horsey Statistics and Machine Learning
+Horse Statistics and Machine Learning
 
 Hosted on AWS at the following url:
 http://birdhorsestats-dev.ap-southeast-2.elasticbeanstalk.com/
